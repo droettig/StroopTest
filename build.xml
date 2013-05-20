@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     22.03.2009 09:31:01                                                        
+
+     project    
+     description
+                   
+     Dirk                                                                
+     ====================================================================== -->
+<project name="Stroop" default="clean" basedir=".">	
+	<property file="build.properties"/>
+
+	<path id="classpath">
+		<fileset dir="${path.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+		
+	<target name="initialize">
+	<tstamp/>
+		<mkdir dir="${path.build}"/>
+		
+		<copy toDir="${path.build}/">
+			<fileset dir="${path.resources}" />
+		</copy>
+		
+	</target>
+	
+	<target name="compile" depends="initialize">
+		<javac nowarn="on" destdir="${path.build}" srcdir="${path.src}">
+			<classpath refid="classpath" />
+       	</javac>
+    </target>
+	
+	<target name="jar" depends="compile">
+		<pathconvert property="manifest.classpath" pathsep=" " targetos="unix">
+			<path refid="classpath" />
+			<map from="${basedir}/" to=""/>
+		</pathconvert>
+		
+		<jar destfile="${ant.project.name}.jar" baseDir="${path.build}">
+			<manifest>
+				<attribute name="Main-Class" value="${manifest.mainclass}" />
+				<attribute name="Class-Path" value="${manifest.classpath}" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="doc" depends="jar">
+		<mkdir dir="${basedir}/doc"/>
+		<javadoc sourcepath="."  public="true" private="false" destdir="doc"/>		
+	</target>
+	
+	<target name="clean" depends="jar">
+		<delete dir="${path.build}"/>
+	</target>
+</project>
