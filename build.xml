@@ -7,7 +7,7 @@
                    
      Dirk                                                                
      ====================================================================== -->
-<project name="Stroop" default="clean" basedir=".">	
+<project name="StroopTest" default="clean" basedir=".">	
 	<property file="build.properties"/>
 
 	<path id="classpath">

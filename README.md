@@ -1,1 +1,1 @@
-Stroop test as a Swing application. 
+Stroop test as a Swing application.
