@@ -26,7 +26,7 @@ public class AboutMenuController implements ActionListener
 
 	public void actionPerformed(ActionEvent e)
 	{
-		String message = "<html><center><b>Stroop Test</b><br><br>UKT - Psychosomatik T"+ue+"bingen</br>"
+		String message = "<html><center><b>Stroop Test</b>"
 				+ "<br><br></br><i>Written by Dirk R"+oe+"ttig, August 2009</i><br></br>"
 				+ "<i>Version: 1.0</i></center></html>";
 

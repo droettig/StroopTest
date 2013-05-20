@@ -231,7 +231,7 @@ public class MainWindow extends JFrame implements ComponentListener, Observer
 
 		this.add(this.letterLabel, BorderLayout.CENTER);
 		this.add(this.coloursPanel, BorderLayout.SOUTH);
-		this.setTitle("Psychosomatik T"+ue+"bingen : Stroop Test");
+		this.setTitle("Stroop Test");
 		this.addComponentListener(this);
 		this.setPreferredSize(new Dimension(800, 600));
 		this.setLocation((SystemProperties.SCREEN_WIDTH / 2) - 400, (SystemProperties.SCREEN_HEIGHT / 2) - 300);
