@@ -1,2 +1,1 @@
-stroop
-======
+Stroop test as a Swing application. 
